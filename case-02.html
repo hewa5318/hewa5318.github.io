@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>서울시 문화행사 혼잡도 지도 · 최전경 포트폴리오</title>
+  <meta name="description" content="행사 탐색을 방문 판단으로">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <nav class="topnav"><a href="./">← 포트폴리오</a><a href="./#projects">PROJECTS</a></nav>
+    <header class="cover">
+      <div class="band"><span>PORTFOLIO · CASE 02</span><span class="r">TEAM PROJECT</span></div>
+      <div class="cover-body">
+        <h1 class="headline sm">행사 탐색을<br><span class="pick">방문 판단</span>으로</h1>
+        <aside class="focus"><div class="k">FOCUS</div><ul><li><span class="n">01</span>정보 연결</li><li><span class="n">02</span>기능 우선순위</li><li><span class="n">03</span>표현 정책</li></ul></aside>
+      </div>
+    </header>
+
+    <p class="name">02 서울시 문화행사 혼잡도 지도</p>
+    <p class="role">팀 프로젝트 · 지도형 서비스 기획</p>
+    <blockquote class="intro">서울시 문화행사와 지역 혼잡도, 주변 이동 정보를 한 지도에 연결해 행사 탐색과 방문 판단을 돕는 서비스입니다.</blockquote>
+    <div class="facts"><div><p class="k">진행</p><p>2026년 8월 팀 프로젝트<br>10월 개인 QA·개선</p><a class="btn" href="https://seoul-culture-crowd-map.morelessen.chatgpt.site" target="_blank" rel="noopener">시연 보기 →</a></div><div><p class="k">역할</p><p>기획·데이터 작업·디자인·QA 공동 참여. 지도 화면 설계와 혼잡도 자동 수집 직접 담당</p></div><div><p class="k">구현 범위</p><p>수집한 데이터를 사용하는 지도 시제품</p></div></div>
+    <figure><img src="images/map_02.png" alt="fig. 2026-08-27 18:20 기준 혼잡도 · 붉은색에 가까울수록 붐빔" loading="lazy" onerror="this.parentNode.remove()"><figcaption>fig. 2026-08-27 18:20 기준 혼잡도 · 붉은색에 가까울수록 붐빔</figcaption></figure>
+
+    <section class="sec">
+      <div class="sec-l">
+        <p class="label">01 · PROBLEM</p>
+        <h2>행사를 찾은 다음에도 필요한 정보가 있었습니다</h2>
+      </div>
+      <div class="sec-r">
+        <p>행사 일정과 장소를 확인해도, 방문하려는 지역이 얼마나 붐비는지와 주변 이동 거점을 함께 파악하기는 어렵다고 보았습니다. 행사 정보와 혼잡도, 가까운 지하철역 등의 정보를 연결하면 방문 판단을 도울 수 있다는 가설에서 출발했습니다.</p>
+        <p class="note">판단 근거: 서울시의 주요 장소 혼잡도 산출·공개 · 이용자 수요 조사 미실시</p>
+      </div>
+    </section>
+    <section class="sec">
+      <div class="sec-l">
+        <p class="label">02 · DECISION</p>
+        <h2>혼잡도 정보가 없는 행사도 탐색할 수 있도록 설계했습니다</h2>
+        <p class="big">239 / 400</p><p class="cap">혼잡도 제공 구역 밖의 행사</p>
+      </div>
+      <div class="sec-r">
+        <p>진행·예정 행사 400건을 혼잡도 제공 구역과 대조한 결과, 239건은 제공 구역 밖에 있었습니다. 가까운 구역의 혼잡도를 대신 붙이면 행사 장소의 상황으로 오해할 수 있어 정보 제공 여부를 명확하게 구분했습니다.</p>
+        <p>행사가 제공 구역 안에 있는지에 따라 보여 주는 정보를 나눴습니다.</p>
+        <div class="tbl"><table><thead><tr><th>상황</th><th>제공하는 정보</th></tr></thead><tbody><tr><td>혼잡도 제공 구역 안의 행사 (161건)</td><td>행사 정보와 해당 지역의 혼잡도</td></tr><tr><td>혼잡도 제공 구역 밖의 행사 (239건)</td><td>행사 일정·장소와 주변 이동 정보, 혼잡도 미제공 안내</td></tr></tbody></table></div>
+        <p>미리 일정을 정하지 않았더라도, 방문한 동네에서 열리는 행사를 지도에서 발견할 수 있어야 한다고 보았습니다. 그래서 혼잡도 제공 구역 밖의 행사도 제외하지 않고 지도에 남기고 필터로 두 경우를 나눠 볼 수 있게 했습니다.</p>
+      </div>
+    </section>
+    <section class="sec">
+      <div class="sec-l">
+        <p class="label">03 · SCREEN</p>
+        <h2>상세 화면을 '혼잡도 → 주변 정보 → 이동' 순서로 구성했습니다</h2>
+      </div>
+      <div class="sec-r">
+        <ul>
+          <li>지도에서 진행·예정 행사와 혼잡도 제공 여부를 구분해 탐색합니다.</li>
+          <li>행사를 고르면 지역 혼잡도와 기준 시각을 확인합니다.</li>
+          <li>가까운 카페·지하철역을 살펴보고 길찾기로 이동합니다.</li>
+        </ul>
+        <p>지도 영역, 마커 팝업, 오른쪽 상세 패널에 어떤 정보를 어떤 순서로 넣을지는 직접 설계도로 정리했고 이 설계도를 바탕으로 ChatGPT와 협업해 대시보드를 구현했습니다.</p>
+        <details><summary>최초 설계와 최종 화면</summary><div class="tbl"><table><thead><tr><th>영역</th><th>최초 설계</th><th>최종 화면</th></tr></thead><tbody><tr><td>지도 마커</td><td>혼잡도를 마커 색으로, 행사 분류를 이모지로 표시</td><td>121개 권역을 혼잡도 색으로 칠하고 마커에도 같은 색 적용, 제공 구역 밖의 행사는 '정보 없음'으로 표시 · 행사 분류 이모지 유지</td></tr><tr><td>필터</td><td>예정·진행 중만 표시, 종료 행사 제외</td><td>유지, 상단 집계도 같은 기준으로 맞춤</td></tr><tr><td>갱신 시간</td><td>필터 옆에 데이터 갱신 시간 표시</td><td>기준 시각 선택으로 확장</td></tr><tr><td>상세 블록 상단</td><td>행사 정보와 혼잡도</td><td>추정 인구, 최근 30분 변화, 다음 예측 추가</td></tr><tr><td>상세 블록 하단</td><td>근처 카페·지하철(추천 대피 장소), 후기란</td><td>지하철은 '가까운 이동 거점'으로 바꾸고 공식 대피소가 아니라는 안내 추가 · 후기란은 API로 충분한 후기를 불러오기 어려워 제외</td></tr></tbody></table></div></details>
+      </div>
+    </section>
+    <section class="sec">
+      <div class="sec-l">
+        <p class="label">04 · QA</p>
+        <h2>방문 시점을 판단할 수 있게 정보를 더했습니다</h2>
+      </div>
+      <div class="sec-r">
+        <h3>현재 상태와 변화 방향을 함께 표시</h3>
+        <p><span class="k-ok">문제</span>혼잡도 등급만으로는 사람이 늘고 있는지 줄고 있는지 알 수 없었습니다.</p>
+        <p><span class="k-ok">개선</span>추정 인구, 최근 30분 변화, 예측 정보를 함께 표시했습니다.</p>
+        <figure><img src="images/compare_02.png" alt="fig. 같은 행사를 고른 상태의 개선 전후 · 혼잡도 데이터 2026-08-27 22:50 기준" loading="lazy" onerror="this.parentNode.remove()"><figcaption>fig. 같은 행사를 고른 상태의 개선 전후 · 혼잡도 데이터 2026-08-27 22:50 기준</figcaption></figure>
+        <details><summary>그 밖의 개선 기록</summary><h3>행사 탐색과 상세 확인을 오가기 쉽게</h3>
+          <p><span class="k-ok">문제</span>오른쪽 상세 패널이 지도 탐색 공간을 차지했습니다.</p>
+          <p><span class="k-ok">개선</span>패널 접기 기능을 더해 행사를 훑어볼 때는 지도를 넓게 쓰고 고른 뒤에는 상세를 펼쳐 보게 했습니다.</p><div class="tbl"><table><thead><tr><th>발견한 문제</th><th>개선 내용</th></tr></thead><tbody><tr><td>긴 행사명이 팝업 밖으로 이탈</td><td>팝업 제목의 줄바꿈 규칙을 보완해 긴 문자열도 칸 안에서 줄을 바꿈</td></tr><tr><td>팝업 폭이 400px로 고정돼 작은 화면에서 잘림</td><td>반응형 폭으로 바꾸고 링크 버튼은 필요하면 다음 줄로 배치</td></tr><tr><td>종료된 행사가 집계 숫자에 섞일 가능성</td><td>표시와 건수를 운영 중 + 예정 행사 기준으로 맞춰 지도의 마커 수와 상단 집계를 일치</td></tr><tr><td>121개 권역 정보를 마우스를 올려야만 확인</td><td>권역을 눌러도 정보가 유지되도록 보완해 터치 기기에서도 확인</td></tr><tr><td>주변 카페·지하철 이름과 주소가 한 줄 말줄임으로 잘림</td><td>최대 2줄까지 보여 주어 장소를 고를 때 필요한 정보를 노출</td></tr><tr><td>지하철을 대피 후보로 오해할 수 있는 표현</td><td>'가까운 이동 거점'으로 바꾸고 공식 대피소가 아니라는 안내를 유지</td></tr><tr><td>노트북 화면에서 대시보드가 답답하게 잘릴 가능성</td><td>고정 높이 의존을 줄이고 화면 크기에 따라 배치가 바뀌도록 보완</td></tr><tr><td>둥근 카드와 그림자가 많아 시선이 분산</td><td>직선형 패널과 얕은 그림자, 분명한 구획으로 정리해 공공데이터 대시보드에 맞는 정보 위계로 변경</td></tr></tbody></table></div></details>
+        <p class="note">QA 범위: 개인 사용 점검 · 코드 반영은 AI 협업 · 외부 이용자 검증 미실시</p>
+      </div>
+    </section>
+    <section class="sec">
+      <div class="sec-l">
+        <p class="label">05 · RESULT</p>
+        <h2>시제품을 넘어 실제 방문 판단을 돕는 서비스로 키우려 합니다</h2>
+      </div>
+      <div class="sec-r">
+        <p>행사와 지역 혼잡도, 주변 이동 정보를 한 화면에 연결하는 시제품을 구현했습니다. 특히 혼잡도 정보의 제공 범위를 명확히 구분하고 직접 사용하며 탐색 흐름을 개선했습니다.</p>
+        <p>다음으로는 자동 수집한 최신 정보가 지도에 바로 반영되도록 연결하려 합니다. 이후 이용자가 행사 선택부터 혼잡도 확인과 길찾기까지 필요한 정보를 이해하고 이동할 수 있는지 확인하려 합니다.</p>
+        <p class="note">데이터 기준: 2026-08-27 수집분 · 실시간 자동 갱신 미적용</p>
+      </div>
+    </section>
+    <section class="sec">
+      <div class="sec-l">
+        <p class="label">06 · DATA</p>
+        <h2>데이터와 기술</h2>
+        <p class="big">5,808건</p><p class="cap">121개 권역 · 48회 자동 수집</p>
+      </div>
+      <div class="sec-r">
+        <ol>
+          <li><strong>수집:</strong> 서울시 문화행사 정보와 행사 주변 카페·지하철역 정보를 모았습니다. 혼잡도는 한 시점만 보면 변화를 알 수 없어서 구글 앱스 스크립트로 121개 권역의 실시간 혼잡도를 8월 27일 14:45부터 22:50까지 약 10분마다 48회, 5,808건을 자동으로 쌓았습니다. (기준 시각 목록 55개 = 본 수집 48회 + 사전 점검 7회)</li>
+          <li><strong>정제·연결:</strong> 행사 좌표가 혼잡도 권역 안에 있는지 공간조인으로 판별했습니다.</li>
+          <li><strong>QA:</strong> 화면이 의도대로 읽히는지 점검하고 고쳤습니다.</li>
+        </ol>
+        <details><summary>주요 기능</summary><div class="tbl"><table><thead><tr><th>기능</th><th>하는 일</th></tr></thead><tbody><tr><td>행사 마커와 필터</td><td>진행 중·예정, 혼잡 권역 안·밖으로 행사를 골라 봅니다.</td></tr><tr><td>혼잡도 권역 색상</td><td>121개 권역을 여유·보통·약간 붐빔·붐빔으로 칠합니다.</td></tr><tr><td>기준 시각 선택</td><td>혼잡도를 어느 시점 기준으로 볼지 고릅니다.</td></tr><tr><td>행사 상세 패널</td><td>현재 혼잡도와 추정 인구, 최근 30분 변화, 다음 예측을 보여줍니다.</td></tr><tr><td>주변 휴식·이동 장소</td><td>가까운 카페와 지하철역을 거리순으로 보여줍니다.</td></tr><tr><td>길찾기·공식 홈페이지</td><td>카카오맵 길찾기와 행사 공식 페이지로 바로 넘어갑니다.</td></tr></tbody></table></div></details>
+        <details><summary>사용한 데이터와 기술</summary><ul>
+          <li><strong>데이터:</strong> 서울시 문화행사 정보 · 서울시 실시간 도시데이터(권역 혼잡도·인구 예측) · 카카오 로컬(주변 장소)</li>
+          <li><strong>주변 장소:</strong> 카페 578곳·지하철역 267곳. 행사마다 가까운 곳을 연결해 행사-장소 연결 2,375건</li>
+          <li><strong>처리:</strong> 행사 좌표와 혼잡도 권역의 공간조인, 행사별 주변 장소 거리 계산, 30분 전 기록과 비교한 인구 변화율 계산</li>
+          <li><strong>화면:</strong> 카카오맵 JavaScript SDK 기반 단일 HTML 대시보드</li></ul><p class="note">출처 구분: 혼잡도 등급·추정 인구는 서울시 제공 · 최근 30분 변화는 수집 기록으로 자체 계산</p><p class="note">시간대별 차이(121개 권역): 18:20 붐빔 21곳·약간 붐빔 42곳 · 22:50 여유 119곳</p></details>
+      </div>
+    </section>
+
+    <nav class="pager"><a class="prev" href="case-01.html"><span class="k">PREV</span>01 동네책소문</a><a class="next" href="case-03.html"><span class="k">NEXT</span>03 오늘의 실록점</a></nav>
+
+  </div>
+</body>
+</html>
