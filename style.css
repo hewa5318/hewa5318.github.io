@@ -128,7 +128,7 @@ img { max-width: 100%; display: block; }
 }
 .facts p { margin: 0 0 4px; }
 .facts .k { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 6px; }
-.facts.edu { margin-top: 0; grid-template-columns: 1fr 0.8fr 1.6fr; }
+.tbl table.edu td { line-height: 2; }
 .btn {
   display: inline-block;
   margin-top: 8px;
@@ -287,7 +287,10 @@ details > :last-child { margin-bottom: 16px; }
   .focus { border-left: 0; border-top: 1px solid var(--ink); padding: 20px 0; }
   .name { font-size: 30px; margin-top: 36px; }
   .grid-about, .row, .sec { grid-template-columns: 1fr; gap: 16px; }
-  .facts, .facts.edu { grid-template-columns: 1fr; gap: 16px; }
+  .facts { grid-template-columns: 1fr; gap: 16px; }
+  .tbl table.edu thead, .tbl table.edu colgroup { display: none; }
+  .tbl table.edu td { display: block; padding: 0 0 20px; border-bottom: 0; }
+  .tbl table.edu td::before { content: attr(data-label); display: block; font-size: 12px; letter-spacing: 0.06em; font-weight: 600; color: var(--muted); padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid var(--ink); }
   section { margin-top: 44px; }
   .sec { padding: 32px 0; }
 }
