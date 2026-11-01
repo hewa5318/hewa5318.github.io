@@ -129,6 +129,11 @@ img { max-width: 100%; display: block; }
 .facts p { margin: 0 0 4px; }
 .facts .k { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 6px; }
 .tbl table.edu td { line-height: 2; }
+.tbl table.awards { margin-top: 12px; }
+.tbl table.awards td { line-height: 2; padding-top: 0; padding-bottom: 0; }
+.tbl table.awards tbody tr:not(:last-child) td { border-bottom: 0; }
+.tbl table.awards tbody tr:first-child td { padding-top: 10px; }
+.tbl table.awards tbody tr:last-child td { padding-bottom: 10px; }
 .btn {
   display: inline-block;
   margin-top: 8px;
